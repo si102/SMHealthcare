@@ -66,7 +66,8 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
 
 void printHealthData(const HealthData* health_data) {
 	int i;
-	
+	int total_calories_intake = 0;
+    int total_calories_burned = 0;
 	// ToCode: to print out the saved history of exercises
 	printf("=========================== History of Exercise =======================\n");
   	for (i = 0; i < health_data->exercise_count; i++) {
@@ -104,7 +105,7 @@ void printHealthData(const HealthData* health_data) {
     } else if (remaining_calories < 0) {
         printf("[Warning] Too few calorries");
     } else {
-        printf("Please exercise for your health!\n", remaining_calories);
+        printf("More exercise recommended! You have %d kcal left to burn.\n", remaining_calories);
     }
 
     printf("=======================================================================\n");
