@@ -75,10 +75,11 @@ void inputDiet(HealthData* health_data) {
 	}
 
     // ToCode: to enter the selected diet in the health data
-    
+    int selected_diet_index = choice - 1;
+    strcpy(health_data->diet[health_data->diet_count].food_name, diet_list[selected_diet_index].food_name);
 
     // ToCode: to enter the total calories intake in the health data
-
+	health_data->diet[health_data->diet_count].calories_intake = diet_list[selected_diet_index].calories_intake;
 
 }
 
